@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: portfolio-website
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run setup
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_USERNAME
+        value: Aniruddha
+      - key: ADMIN_PASSWORD
+        value: Aniruddha@2006
+      - key: PORT
+        value: 10000
