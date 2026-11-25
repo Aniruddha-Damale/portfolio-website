@@ -9,15 +9,18 @@ const bcrypt = require('bcryptjs');
 async function seed() {
   console.log('Starting database seeding...');
 
-  // Initialize database
+  // Initialize database (only if not already initialized)
   const db = require('./database');
-  await db.init();
+  if (!db.ready) {
+    await db.init();
+  }
 
   try {
     // 1. Admin user seeding
-    const adminUsername = process.env.ADMIN_USERNAME || 'admin';
-    const adminPassword = process.env.ADMIN_PASSWORD || 'Admin@12345';
+    const adminUsername = process.env.ADMIN_USERNAME || 'Aniruddha';
+    const adminPassword = process.env.ADMIN_PASSWORD || 'Aniruddha@2006';
     const saltRounds = 12;
+    console.log(`[Seed] Using admin username: "${adminUsername}"`);
 
     const passwordHash = await bcrypt.hash(adminPassword, saltRounds);
 
