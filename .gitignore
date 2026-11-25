@@ -1,0 +1,11 @@
+node_modules/
+server/portfolio.db
+.env
+public/uploads/profile/*
+public/uploads/projects/*
+public/uploads/certificates/*
+public/uploads/resume/*
+!public/uploads/profile/.gitkeep
+!public/uploads/projects/.gitkeep
+!public/uploads/certificates/.gitkeep
+!public/uploads/resume/.gitkeep
